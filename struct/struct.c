@@ -7,7 +7,7 @@ struct Person
 {
     char name[10];
     u_int8_t age;
-    uint height;
+    uint8_t height;
 };
 
 struct Employee
@@ -26,10 +26,17 @@ void main() {
 
     struct Employee employee;
     employee.name = "Luis";
-    
-    printf("Person : %s\n",person.name);  
 
-    printf("Employee : %s\n",employee.name);   
+    printf("Person : %s\n", &person);
+    printf("Employee : %s\n", &employee);
+
+    printf("Person X: %x\n", &person);
+    printf("Employee X: %x\n", &employee);
+    
+    printf("Person name : %s\n", person.name);  
+
+    printf("Employee name: %s\n", employee.name); 
+    printf("Employee name ADDRESS: %x\n", *employee.name);   
     
     return;
 }
